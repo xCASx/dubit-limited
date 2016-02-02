@@ -1,5 +1,7 @@
 package com.dubitlimited;
 
+import java.util.HashMap;
+
 public class MainClass {
 
   public static void main(String[] args) {
@@ -10,8 +12,6 @@ public class MainClass {
     System.out.println(l.find("en", "greeting", "Stefan"));
   }
 }
-
-import java.util.HashMap;
 
 public class Localiser {
 
