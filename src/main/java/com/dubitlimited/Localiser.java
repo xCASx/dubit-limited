@@ -13,7 +13,7 @@ public class MainClass {
   }
 }
 
-public class Localiser {
+class Localiser {
 
     private HashMap<String, HashMap<String, String>> translations;
 
