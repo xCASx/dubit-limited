@@ -22,8 +22,8 @@ public class MainClass {
  */
 class Localizer {
 
+    private final String resourceBundleName;
     private HashMap<Locale, ResourceBundle> resourceBundles = new HashMap<>();
-    private String resourceBundleName;
 
     public Localizer(String resourceBundleName) {
         this.resourceBundleName = resourceBundleName;
