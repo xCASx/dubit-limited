@@ -9,7 +9,7 @@ public class MainClass {
     private static final String MESSAGE_BUNDLE_NAME = "MessageBundle";
 
     public static void main(String[] args) {
-        Localiser l = new Localiser(MESSAGE_BUNDLE_NAME);
+        Localizer l = new Localizer(MESSAGE_BUNDLE_NAME);
 
         String message = l.getMessage(new Locale("en", "US"), "greeting", "Stefan");
 
@@ -20,12 +20,12 @@ public class MainClass {
 /**
  * This class provides the ability to work with localized messages.
  */
-class Localiser {
+class Localizer {
 
     private HashMap<Locale, ResourceBundle> resourceBundles = new HashMap<>();
     private String resourceBundleName;
 
-    public Localiser(String resourceBundleName) {
+    public Localizer(String resourceBundleName) {
         this.resourceBundleName = resourceBundleName;
     }
 
