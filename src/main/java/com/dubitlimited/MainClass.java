@@ -21,6 +21,7 @@ public class MainClass {
 
 /**
  * This class provides the ability to work with localized messages.
+ * Contains map (inner cache) with lazy bundles loading.
  */
 class Localizer {
 
