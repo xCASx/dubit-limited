@@ -9,9 +9,9 @@ public class MainClass {
     private static final String MESSAGE_BUNDLE_NAME = "MessageBundle";
 
     public static void main(String[] args) {
-        Localizer l = new Localizer(MESSAGE_BUNDLE_NAME);
+        Localizer localizer = new Localizer(MESSAGE_BUNDLE_NAME);
 
-        String message = l.getMessage(new Locale("en", "US"), "greeting", "Stefan");
+        String message = localizer.getMessage(new Locale("en", "US"), "greeting", "Stefan");
 
         System.out.println(message);
     }
