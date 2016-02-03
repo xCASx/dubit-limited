@@ -6,13 +6,15 @@ import java.util.ResourceBundle;
 
 public class MainClass {
 
-  public static void main(String[] args) {
+    private static final String MESSAGE_BUNDLE_NAME = "MessageBundle";
 
-    Localiser l = new Localiser();
+    public static void main(String[] args) {
+        Localiser l = new Localiser(MESSAGE_BUNDLE_NAME);
 
-    l.add("en", "greeting", "Hello, #{0}!");
-    System.out.println(l.find("en", "greeting", "Stefan"));
-  }
+        String message = l.getMessage(new Locale("en", "US"), "greeting", "Stefan");
+
+        System.out.println(message);
+    }
 }
 
 class Localiser {
