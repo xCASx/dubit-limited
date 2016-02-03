@@ -34,16 +34,16 @@ class Localizer {
      * Get localized formatted message from resource bundle.
      * @param locale - current locale
      * @param msgCode - message code
-     * @param parameter - dynamic part of message
+     * @param parameters - dynamic part of message
      * @return localized formatted string
      */
-    public String getMessage(Locale locale, String msgCode, String parameter) {
+    public String getMessage(Locale locale, String msgCode, Object... parameters) {
         ResourceBundle resourceBundle = resourceBundles.get(locale);
         if (resourceBundle == null) {
             resourceBundle = createNewBundle(locale);
             resourceBundles.put(locale, resourceBundle);
         }
-        return MessageFormat.format(resourceBundle.getString(msgCode), parameter);
+        return MessageFormat.format(resourceBundle.getString(msgCode), parameters);
     }
 
     /**
