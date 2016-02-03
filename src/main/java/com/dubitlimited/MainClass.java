@@ -17,31 +17,16 @@ public class MainClass {
     }
 }
 
+/**
+ * This class provides the ability to work with localized messages.
+ */
 class Localiser {
-
-    private HashMap<String, HashMap<String, String>> translations;
 
     private HashMap<Locale, ResourceBundle> resourceBundles = new HashMap<>();
     private String resourceBundleName;
 
-    public Localiser() {
-        this.translations = new HashMap<String, HashMap<String, String>>();
-    }
-
     public Localiser(String resourceBundleName) {
         this.resourceBundleName = resourceBundleName;
-    }
-
-    public void add(String locale, String key, String value) {
-        if(!translations.containsKey(locale)) {
-            translations.put(locale, new HashMap<String, String>());
-        }
-
-        translations.get(locale).put(key, value);
-    }
-
-    public String find(String locale, String key, String parameter) {
-        return translations.get(locale).get(key).replace("#{0}", parameter);
     }
 
     /**
