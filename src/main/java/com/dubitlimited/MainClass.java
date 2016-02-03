@@ -1,5 +1,6 @@
 package com.dubitlimited;
 
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -42,8 +43,7 @@ class Localizer {
             resourceBundle = createNewBundle(locale);
             resourceBundles.put(locale, resourceBundle);
         }
-
-        return resourceBundle.getString(msgCode).replace("#{0}", parameter);
+        return MessageFormat.format(resourceBundle.getString(msgCode), parameter);
     }
 
     /**
