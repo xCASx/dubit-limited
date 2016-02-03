@@ -53,6 +53,16 @@ class Localizer {
             throw new IllegalArgumentException("Message code cannot be null");
         }
 
+        ResourceBundle resourceBundle = getResourceBundle(locale);
+        return MessageFormat.format(resourceBundle.getString(msgCode), parameters);
+    }
+
+    /**
+     * Get resource bundle for given locale
+     * @param locale - current locale
+     * @return localized resource bundle, or default bundle if locale is {@code null}
+     */
+    private ResourceBundle getResourceBundle(Locale locale) {
         ResourceBundle resourceBundle;
         if (locale == null) {
             if (defaultResourceBundle == null) {
@@ -66,7 +76,7 @@ class Localizer {
                 resourceBundles.put(locale, resourceBundle);
             }
         }
-        return MessageFormat.format(resourceBundle.getString(msgCode), parameters);
+        return resourceBundle;
     }
 
     /**
