@@ -47,6 +47,7 @@ class Localizer {
      * @param msgCode - message code
      * @param parameters - dynamic part of message
      * @return localized formatted string
+     * @throws IllegalArgumentException if message code is {@code null}
      */
     public String getMessage(Locale locale, String msgCode, Object... parameters) {
         if (msgCode == null) {
